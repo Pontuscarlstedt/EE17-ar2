@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulär</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="./skript.php" method="POST">
+        <h2>Kontaktuppgifter</h2><br>
+        <label for="">Förnamn</label>
+        <input type="text" name="förnamn" placeholder="Tex Erik" required>
+        <label for="">Efternamn</label>
+        <input type="text" name="efternamn" placeholder="Tex Svensson" required>
+        <label for="">Mobilnummer</label>
+        <input type="text" name="mobilnummer" placeholder="+46078...." required>
+
+        <label for="">Kön</label> <br>
+        <input type="radio" name="kon" value="kille">Kille
+        <input type="radio" name="kon" value="tjej">Tjej
+        <input type="radio" name="kon" value="annat">Annat 
+
+        <label for="">Favorit superhjälte</label><br>
+        <input type="checkbox" name="hjalte" value="DC">DC
+        <input type="checkbox" name="hjalte" value="Marvel">Marvel 
+
+        <select name="fotbollslag" id="">
+            <option value="Aik">Aik</option>
+            <option value="Hammarby">Hammarby</option>
+            <option value="Djurgården">Djurgården</option>
+            <option value="Malmö FF">Malmö FF</option>
+        </select><br>
+        <label for="" name="kommentar">Kommentar</label>
+        <textarea name="kommentar" cols="30" rows="10" placeholder="Personlig kommentar"></textarea>
+        <button>Skicka</button>
+    </form>
+</body>
+</html>
