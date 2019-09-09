@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kontaktformulär</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+    <link rel="stylesheet" href="uppgift-1-2.css">
+</head>
+<body>
+        <form action="./skript.php" method="POST">
+            <h2>Kontaktuppgifter</h2><br>
+            <label>Förnamn</label>
+            <input type="text" name="förnamn" placeholder="Tex Erik" required>
+            <label>E-postadress</label>
+            <input type="email" name="epost" placeholder="Tex Svensson@..." required>
+            <label>Mobilnummer</label>
+            <input type="tel" pattern="[0-9]{3}-[0-9]{7}" name="mobilnummer" placeholder="+46078...." required> 
+    
+            <label>Vill du ta nöje av vårat nöjesbrev?</label> <br>
+            <input type="checkbox" name="noje" value="nej">Nej tack
+            <input type="checkbox" name="noje" value="ja" checked>Ja tack
+
+    
+            <label>Hur vill du bli kontanktad?</label><br>
+            <input type="radio" name="kontakt" value="telefon">Telefon
+            <input type="radio" name="kontakt" value="mail">Mail
+            <button>Skicka</button>
+        </form>
+</body>
+</html>
