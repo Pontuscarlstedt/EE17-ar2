@@ -29,15 +29,12 @@
 </div>
 </form>
 <?php
-if (isset($_REQUEST["låna"], $_REQUEST["belopp"], $_REQUEST["ranta"])) {
 
+$belopp = filter_input(INPUT_POST, 'belopp', FILTER_DEFAULT);
+$låna = filter_input(INPUT_POST, 'låna', FILTER_DEFAULT);
+$ranta = filter_input(INPUT_POST, 'ranta', FILTER_DEFAULT);
 
-
-
-
-$belopp = filter_input(INPUT_POST, $belopp, FILTER_DEFAULT);
-$låna = filter_input(INPUT_POST, $låna, FILTER_DEFAULT);
-$ranta = filter_input(INPUT_POST, $ranta, FILTER_DEFAULT);
+if ( $belopp && $ranta && $ranta) {
 
 $kostnad = $belopp;
 for ($i=0; $i < $låna; $i++) { 

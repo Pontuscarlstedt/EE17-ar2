@@ -12,3 +12,8 @@ form {
     grid-template-columns: 1fr 2fr;
     grid-gap: 20px;
 }
+table tr.grå td {
+    background-color: grey;
+
+
+}

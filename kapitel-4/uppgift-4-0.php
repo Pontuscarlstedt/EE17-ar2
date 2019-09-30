@@ -20,10 +20,14 @@
     <button>Skicka</button>
 </form>
 <?php
-if (isset($_POST["namn"])) {
+    $namn = filter_input_array(INPUT_POST)["namn"];
 
-    $namn = filter_(INPUT_POST, $namn, FILTER_DEFAULT);
-    print_r($namn);
+if ($namn) {
+
+foreach ($namn as $namnet) {
+
+    echo "<p>$namnet</p>";
+}
 
 }
 ?> 
