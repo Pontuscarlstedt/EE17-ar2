@@ -1,0 +1,19 @@
+table {
+    width: 300px;
+}
+.kol2 {
+    width: 600px;
+}
+form {
+    width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+}
+table tr.grå td {
+    background-color: grey;
+
+
+}
