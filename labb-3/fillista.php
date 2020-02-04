@@ -12,44 +12,39 @@
         <h1>Katalog</h1>
 
         <?php
-    $katalog = "../kapitel-7";
+$katalog = "../kapitel-7";
 
-    $resultat = scandir($katalog);
-    echo "<table>";
-  echo  "<tr><th></th><th>Namn</th></tr>";
-    foreach ($resultat as $objekt) {
-        /* Inte ta med punkterna */
-        if ($objekt !='.' && $objekt !='..') {
+$resultat = scandir($katalog);
+echo "<table>";
+echo "<tr><th></th><th>Namn</th></tr>";
+foreach ($resultat as $objekt) {
+    /* Inte ta med punkterna */
+    if ($objekt != '.' && $objekt != '..') {
 
-            /* Är det en katalog? */
-            if (is_dir("$katalog/$objekt")) {
-                echo 
+        /* Är det en katalog? */
+        if (is_dir("$katalog/$objekt")) {
+            echo
                 "<tr>
                 <td><i class='fa fa-folder'></i></td>
                 <td>$objekt</td>
                 </tr>";
-            } else {
-                echo 
-                
+        } else {
+            echo
+
                 "<tr>
                 <td><i class='fa fa-file'></i></td>
                 <td>$objekt</td>
                 </tr>";
-                $filInfo = pathinfo($objekt);
-                $filtyp = $filInfo['extension'];
-         
-            }
+            $filInfo = pathinfo($objekt);
+            $filtyp = $filInfo['extension'];
 
-
-            
-           
         }
 
-       
-        
     }
-   echo "</table>";
-    ?>
+
+}
+echo "</table>";
+?>
     </div>
 </body>
 </html>

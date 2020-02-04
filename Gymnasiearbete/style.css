@@ -15,7 +15,8 @@ header {
     background: #252525;
     text-align: center;
     position: sticky;
-    top: 0;  
+    top: 0; 
+    overflow: auto; 
 }
 .loga {
     font-size: 68px;
@@ -40,4 +41,13 @@ header {
 .bakgrund {
     width: 100%;
 
+}
+body {
+    min-height: 100%;
+    background-image: url("./bilder/loukas-konstantinidis-k1cNsoxYquQ-unsplash.jpg");
+    background-size: 100%;
+    background-position: 0px 105px;
+
+
+    
 }
