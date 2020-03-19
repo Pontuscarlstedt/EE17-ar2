@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Canvas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="canvas">
+        oops din webbläsare förstår inte canvas
+    </canvas>
+    <script>
+        /* Element vi använder */
+        const eCanvas = document.querySelector("#canvas");
+
+        eCanvas.width = eCanvas.scrollWidth;
+        eCanvas.height = eCanvas.scrollHeight;
+
+        var ctx = eCanvas.getContext("2d");
+
+        ctx.fillStyle = "blue";
+        ctx.fillRect(10, 10, 100, 100);
+        ctx.fillStyle = "blue";
+        ctx.fillRect(150, 150, 150, 100);
+        ctx.fillStyle = "blue";
+        ctx.fillRect(10, 150, 100, 100);
+        ctx.fillStyle = "blue";
+        ctx.fillRect(150, 10, 150, 100);
+
+        ctx.fillStyle = "yellow";
+        ctx.fillRect(100, 10, 50, 240);
+        ctx.fillStyle = "yellow";
+        ctx.fillRect(10, 100, 290, 50);
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

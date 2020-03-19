@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Canvas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="canvas">
+        oops din webbläsare förstår inte canvas
+    </canvas>
+    <script>
+        /* Element vi använder */
+        const eCanvas = document.querySelector("#canvas");
+
+        eCanvas.width = eCanvas.scrollWidth;
+        eCanvas.height = eCanvas.scrollHeight;
+
+        var ctx = eCanvas.getContext("2d");
+
+        ctx.fillStyle = "green";
+        ctx.fillRect(10, 10, 100, 100);
+
+        ctx.strokeStyle = "red";
+        ctx.strokeRect(250, 10, 100, 100);
+
+        ctx.fillStyle = "blue";
+        ctx.beginPath();
+        ctx.arc(500, 60, 50, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = "pink";
+        ctx.beginPath();
+        ctx.arc(100, 250, 50, 0, Math.PI * 1);
+        ctx.fill();
+
+        ctx.strokeStyle = "brown";
+        ctx.beginPath();
+        ctx.arc(100, 450, 50, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.fillStyle = "purple";
+        ctx.beginPath();
+        ctx.arc(500, 450, 50, 0, Math.PI / 2);
+        ctx.lineTo(500, 450)
+        ctx.fill();
+
+
+    </script>
+    
+</body>
+</html>

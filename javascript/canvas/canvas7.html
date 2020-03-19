@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Canvas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas></canvas>
+    <script>
+        /* Element vi arbeter med */
+        const eCanvas = document.querySelector("canvas");
+
+        /* Ställ in bredd och storlek = fullscreen */
+        eCanvas.width = 600;
+        eCanvas.height = 500;
+
+        /* Väljer rit-api */
+        var ctx = eCanvas.getContext("2d");
+        var karim = {
+            x: 300,
+            y: 250,
+           dx: 1,
+           dy: 1
+
+        }
+
+        var image = new Image();
+        image.src = "./karim.jpg";
+
+        /* Lyssna på tangenterna */
+        window.addEventListener("keydown", flytta);
+        function flytta(e) {
+            if (e.key == "ArrowRight") {
+
+                karim.dx += 1;
+            }
+            if (e.key == "ArrowLeft") {
+
+                karim.dx -= 1;
+            }
+            if (e.key == "ArrowUp") {
+
+                karim.dy -= 1;
+            }
+            if (e.key == "ArrowDown") {
+
+                karim.dy += 1;
+            }
+            
+        }
+
+
+        function animate() {
+
+
+            //ctx.clearRect(0, 0, 600, 500);
+
+            karim.x += karim.dx;
+            karim.y += karim.dy;
+            /* Rita ut Karim */
+            ctx.drawImage(image, karim.x - 25, karim.y - 25, 50, 50 );
+
+            requestAnimationFrame(animate);
+        };
+        animate();
+    </script>
+</body>
+</html>

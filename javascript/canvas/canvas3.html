@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Canvas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="canvas">
+        oops din webbläsare förstår inte canvas
+    </canvas>
+    <script>
+        /* Element vi använder */
+        const eCanvas = document.querySelector("#canvas");
+
+        eCanvas.width = eCanvas.scrollWidth;
+        eCanvas.height = eCanvas.scrollHeight;
+
+        var ctx = eCanvas.getContext("2d");
+
+        var image = new Image();
+        image.src = "./donald-duck-mickey-mouse-clip-art-donald-duck-png-transparent-images.jpg";
+        image.addEventListener("load", function(){
+            ctx.drawImage(image, 100, 100, 400, 500)
+        });
+
+        
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

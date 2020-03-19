@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="meny.css">
     <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 </head>
-<body>
+<body style="background-color: white;">
     <div class="kontainer">
             <header>
                     <div class='hamburger'>
@@ -18,9 +18,9 @@
                             <div class='line'></div>
                         </div>
                         <div class='menu'>
-                            <div class='menu-item'><a href="startsida.html">Home</a></div>
-                            <div class='menu-item'><a href="omoss.html">About us</a></div>
-                            <div class='menu-item'><a href="kontakt.html">Contact</a></div>
+                            <div class='menu-item'><a href="startsida.html">Startsida</a></div>
+                            <div class='menu-item'><a href="omoss.html">Vilka är vi?</a></div>
+                            <div class='menu-item'><a href="kontakt.html">Kontakt</a></div>
                         </div>
                     <h1 class="loga">upsleeve</h1>
                     <div class="korgdiv">
@@ -30,6 +30,26 @@
                     </div>                   
             </header>
             <main>
+                <div  class="formular">
+                    <form action="startsida.html">
+                        <ul class="form-style-1">
+                            <li><label>Namn och Efternamn <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="Namn" /> <input type="text" name="field2" class="field-divided" placeholder="Efternamn" /></li>
+                            <li>
+                                <label>Email <span class="required">*</span></label>
+                                <input type="email" name="field3" class="field-long" />
+                            </li>
+                            <li>
+                                <label>Meddelande <span class="required">*</span></label>
+                                <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+                            </li>
+                            <li>
+                                <button class="button" style="vertical-align:middle"><span>Skicka </span></button>
+                            </li>
+                        </ul>
+                        </form>
+
+            </div>
+
 
             </main>
 

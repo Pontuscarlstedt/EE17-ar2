@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Canvas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas></canvas>
+    <script>
+        /* Element vi arbeter med */
+        const eCanvas = document.querySelector("canvas");
+
+        /* Ställ in bredd och storlek = fullscreen */
+        eCanvas.width = 600;
+        eCanvas.height = 500;
+
+        /* Väljer rit-api */
+        var ctx = eCanvas.getContext("2d");
+        var boll = {
+            x: 200,
+            y: 200,
+            dx: 1,
+            dy: 1
+
+        };
+
+        /* Startvärden */
+        boll.x = Math.ceil(Math.random() * 500 + 50) 
+        boll.y = Math.ceil(Math.random() * 400 + 50) 
+        boll.dx = Math.ceil(Math.random() * 10) 
+        boll.dy = Math.ceil(Math.random() * 10) 
+
+        
+
+
+        function slumpFärg() {
+            var r = Math.ceil(Math.random() * 255);
+            var g = Math.ceil(Math.random() * 255);
+            var b = Math.ceil(Math.random() * 255);
+            var färg = "rgb(" + r + " , " + g + ", " + b + ")";
+            return färg;
+
+        };
+        /* Skapa en animations loop */
+        function ritaBoll() {
+            ctx.beginPath();
+            ctx.arc(boll.x, boll.y, 30, 0, Math.PI * 2);
+            ctx.stroke();
+        };
+
+        function animate() {
+            /* Tömma skärmen */
+            //ctx.clearRect(0, 0, 600, 500);
+            ctx.strokeStyle = slumpFärg();
+
+            ritaBoll();
+
+
+            if (boll.x > 570 || boll.x < 30) {
+                boll.dx = -boll.dx;
+
+            }
+            if (boll.y > 470 || boll.y < 30) {
+                boll.dy = -boll.dy;
+
+            }
+            boll.x += boll.dx;
+            boll.y += boll.dy;
+
+
+            requestAnimationFrame(animate);
+        };
+        animate();
+    </script>
+</body>
+</html>
