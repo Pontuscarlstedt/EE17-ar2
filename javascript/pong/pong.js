@@ -36,14 +36,14 @@ studs = new Audio("./studs.wav");
 smash = new Audio("./smash.wav");
 
 /* Läs highscore från databasen */
-//lasaHighscore();
+lasaHighscore();
 
 /* Starta spelet när vi trycker på Start */
 eForm.addEventListener("submit", function(e) {
     e.preventDefault();
 
     if (!startFlagga) {
-        //sparaNamn();
+        sparaNamn();
         startFlagga = true;
         reset();
     }
@@ -106,7 +106,7 @@ function gameOver() {
     ctx.fillStyle = "#FFF";
     ctx.textAlign = "center";
     ctx.fillText("Game Over!", 300, 200);
-    //sparaPoäng();
+    sparaPoäng();
 }
 
 /* Animationsloopen */
@@ -176,3 +176,67 @@ function animate() {
         requestAnimationFrame(animate);
     }
 }
+function sparaNamn() {
+    var namn = eNamn.value;
+    console.log("namn=", namn);
+
+    //låser input-rutan
+    eNamn.readOnly;
+
+    //Skapa en ajax för att kunna skicka data
+
+    var ajax = new XMLHttpRequest();
+
+    //Omvandla data till POST
+    var postData = new FormData();
+    postData.append("namn", namn);
+
+    //Skicka data
+    ajax.open("POST", "./spara-namn.php");
+    ajax.send(postData);
+
+    //ta emot svaret
+    ajax.addEventListener("loadend", function () {
+        console.log("Tar emot svar=", this.responseText);
+    });
+}
+function sparaPoäng() {
+    var namn = eNamn.value;
+
+    //Skapa en ajax för att kunna skicka data
+
+    var ajax = new XMLHttpRequest();
+
+    //Omvandla data till POST
+    var postData = new FormData();
+    postData.append("namn", namn);
+    postData.append("poäng", poäng);
+
+    //Skicka data
+    ajax.open("POST", "./spara-poäng.php");
+    ajax.send(postData);
+
+    //ta emot svaret
+    ajax.addEventListener("loadend", function () {
+        console.log("Tar emot svar=", this.responseText);
+    });
+
+    
+}
+
+//Hämta highscore
+function lasaHighscore() {
+
+    var ajax = new XMLHttpRequest();
+
+    ajax.open("POST", "./läsa-highscore.php");
+    ajax.send();
+
+    ajax.addEventListener("loadend", function () {
+        console.log("Tar emot svar=", this.responseText);
+        eHighscore.innerHTML = this.responseText;
+    });
+
+    
+}
+
