@@ -144,3 +144,10 @@ form span {
 blockquote footer {
     font-style: italic;
 }
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
